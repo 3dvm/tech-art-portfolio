@@ -1,5 +1,3 @@
-![Profile](./imgs/edv-profile-frame.png)
-
 # Ernesto Del Valle | Technical Artist & Pipeline TD
 
 Welcome to my technical art and pipeline engineering portfolio. I specialize in bridging strict code architecture with frictionless, artist-friendly environments to eliminate production bottlenecks and optimize rendering pipelines in Blender.
