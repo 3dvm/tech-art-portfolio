@@ -1,7 +1,7 @@
 remote_theme: pages-themes/midnight@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
-![Profile Picture]({{ site.baseurl }}/imgs/edv-profile-frame.png)
+header_image: "/imgs/edv-profile-frame.png"
 title: Ernesto Del Valle
 tagline: Technical Artist & Pipeline TD
 description: Technical Art portfolio bridging code architecture with artist-friendly environments. Includes Python pipeline automation, headless rendering scripts, and procedural Geometry Nodes setups. Built to eliminate bottlenecks and scale 3D workflows in Blender.
