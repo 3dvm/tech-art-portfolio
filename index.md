@@ -1,6 +1,6 @@
-# Ernesto Del Valle | Technical Artist & Pipeline TD
+# Ernesto Del Valle M. | Technical Artist & Pipeline TD
 
-Welcome to my technical art and pipeline engineering portfolio. I specialize in bridging strict code architecture with frictionless, artist-friendly environments to eliminate production bottlenecks and optimize rendering pipelines in Blender.
+Welcome to my technical art and pipeline portfolio. I specialize in bridging the gap between useful but sometimes complex code architecture and artist-friendly environments to eliminate production bottlenecks and optimize rendering pipelines in Blender.
 
 ## Profile Summary
 * **Domain Expertise:** Pipeline Automation, DCC Tooling (Blender Python API), Advanced Procedural Systems (Geometry Nodes), Headless Render Optimization, and Core Asset Management workflows.
