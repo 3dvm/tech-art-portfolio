@@ -28,13 +28,13 @@ To mimic the spongy look of bone marrow cavities, the system scatters points ins
 **Phase B: SDF Conversion & Cortical Fusion**
 Points and lines don't render. The wireframe is converted into a continuous volumetric grid (Points to SDF Volume). The critical step here is the boolean union between the internal trabecular volume and the external cortical bone shell, ensuring a biologically accurate, seamless transition rather than intersecting geometry.
 
-![Phase B Nodes](URL_DE_CAPTURA_2)
+![Phase B Nodes](imgs/trabecular_GN-2.png)
 *> **Image 2:** Converting the procedural skeleton into an SDF Grid. The voxel size is exposed to the modifier panel for LOD (Level of Detail) control.*
 
 **Phase C: Surface Tension & Organic Smoothing**
 Converting volumes back to meshes often results in blocky, voxelized artifacts. A custom smoothing iterative loop relaxes the geometry, recreating the natural surface tension and biological decay of real bone tissue.
 
-![Phase C Nodes](URL_DE_CAPTURA_3)
+![Phase C Nodes](imgs/trabecular_GN-2.png)
 *> **Image 3:** The Volume-to-Mesh conversion followed by the iterative smoothing node group, achieving the final organic look.*
 
 ---
