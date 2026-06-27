@@ -38,13 +38,30 @@ Converting volumes back to meshes often results in blocky, voxelized artifacts. 
 *> **Image 3:** The Volume-to-Mesh conversion followed by the iterative smoothing node group, achieving the final organic look.*
 
 ---
-
 ### 3. Tools & Infrastructure
-| Category | Technology Used |
-| :--- | :--- |
-| **Engine** | Blender 3D |
-| **Framework** | Geometry Nodes (Node-based procedural architecture) |
-| **Core Math** | Signed Distance Fields (SDF), Voronoi spatial clustering, Boolean Volume logic |
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Category</th>
+      <th style="text-align: left">Technology Used</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Engine</strong></td>
+      <td>Blender 3D</td>
+    </tr>
+    <tr>
+      <td><strong>Framework</strong></td>
+      <td>Geometry Nodes (Node-based procedural architecture)</td>
+    </tr>
+    <tr>
+      <td><strong>Core Math</strong></td>
+      <td>Signed Distance Fields (SDF), Voronoi spatial clustering, Boolean Volume logic</td>
+    </tr>
+  </tbody>
+</table>
 
 ### 4. Impact & Pipeline Metrics
 * **Time Efficiency:** Reduced asset creation time from days of manual sculpting to real-time, instant procedural generation.
