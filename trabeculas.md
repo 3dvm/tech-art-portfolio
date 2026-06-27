@@ -5,7 +5,7 @@
 [← Back to Home](./)
 
 <div align="center">
-  <video width="800" controls autoplay loop muted playsinline preload="metadata" style="border-radius: 8px;">
+  <video width="600" controls autoplay loop muted playsinline preload="metadata" style="border-radius: 8px;">
     <source src="https://estudiomacuare.com/wp-content/uploads/export_360_bone_1080.mp4" type="video/mp4">
     Tu navegador no soporta la reproducción de video nativo.
   </video>
