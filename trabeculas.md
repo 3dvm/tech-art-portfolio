@@ -4,7 +4,12 @@
 ## Case Study: Procedural Trabecular Bone Generator (MedTech Pipeline)
 [← Back to Home](./)
 
-[![Watch the Demo](./imgs/trabecula_thumb.png)](https://estudiomacuare.com/wp-content/uploads/export_360_bone_1080.mp4)
+<div align="center">
+  <video width="800" controls autoplay loop muted playsinline preload="metadata" style="border-radius: 8px;">
+    <source src="https://estudiomacuare.com/wp-content/uploads/export_360_bone_1080.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de video nativo.
+  </video>
+</div>
 *Click the image to watch the 60-second technical breakdown.*
 
 ---
