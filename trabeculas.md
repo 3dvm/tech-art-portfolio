@@ -34,7 +34,7 @@ Points and lines don't render. The wireframe is converted into a continuous volu
 **Phase C: Surface Tension & Organic Smoothing**
 Converting volumes back to meshes often results in blocky, voxelized artifacts. A custom smoothing iterative loop relaxes the geometry, recreating the natural surface tension and biological decay of real bone tissue.
 
-![Phase C Nodes](imgs/trabecular_GN-2.png)
+![Phase C Nodes](imgs/trabecular_GN-3.png)
 *> **Image 3:** The Volume-to-Mesh conversion followed by the iterative smoothing node group, achieving the final organic look.*
 
 ---
