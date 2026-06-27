@@ -22,7 +22,7 @@ Instead of relying on polygon modeling, I engineered a 100% procedural generator
 **Phase A: Volumetric Cellular Structuring**
 To mimic the spongy look of bone marrow cavities, the system scatters points inside the target volume and evaluates them through a 3D Voronoi texture. By isolating the edges of these cellular fractures, we create the foundational wireframe of the trabeculae.
 
-![Phase A Nodes](URL_DE_CAPTURA_1)
+![Phase A Nodes](imgs/trabecular_GN-1a.png)
 *> **Image 1:** Scattering logic and Voronoi edge isolation. Note the math nodes controlling the density threshold.*
 
 **Phase B: SDF Conversion & Cortical Fusion**
