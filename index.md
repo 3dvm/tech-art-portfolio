@@ -11,17 +11,18 @@ Welcome to my technical art and pipeline engineering portfolio. I specialize in 
 
 ## Production Case Studies
 
-### 🦴 [Case Study 1: Procedural Trabecular Generator](./trabeculas.md)
+### [Case Study 1: Procedural Trabecular Generator](./trabeculas.md)
+![Trabecuar Bone render](./imgs/trabecula_thumb.png)
 **Focus:** *Procedural Content Generation & Spatial Math (Geometry Nodes)*
 An advanced biological asset generator built to replicate human bone microarchitecture. Replaced days of unscalable manual sculpting with a lightweight, data-driven Voronoi scaffolding system that executes instant volumetric integration directly in the viewport.
 👉 [Read the full breakdown and see the node architecture](./trabeculas.md)
 
-### 🚀 [Case Study 2: "The Time Capsule" Add-on Patcher & Launcher](./launcher.md)
+### [Case Study 2: "The Time Capsule" Add-on Patcher & Launcher](./launcher.md)
 **Focus:** *Pipeline Infrastructure & Environment Isolation (Blender Python API)*
 A custom production environment wrapper designed to isolate project dependencies and automate pipeline deployment. Features a dynamic Python utility that intercepts official Blender Studio tools to kill network authentication bottlenecks and enforce 100% backward compatibility across legacy asset libraries.
 👉 [Read the technical breakdown and view the source code](./launcher.md)
 
-### 🎬 [Case Study 3: Headless Render Automation Framework](./render-headless.md)
+### [Case Study 3: Headless Render Automation Framework](./render-headless.md)
 **Focus:** *Render Pipeline Engineering & Core Automation Scripts*
 A conditional headless render manager built for stylized animation pipelines. Implemented Python startup wrappers to audit missing frame sequences, evaluate scene context, and inject opposite render settings (NPR normal displacement configurations vs. character motion blur) silently across a multi-layer render stack.
 👉 [Read the pipeline breakdown and audit the Python wrappers](./render-headless.md)
