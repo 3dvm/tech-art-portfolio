@@ -29,5 +29,5 @@ A conditional headless render manager built for stylized animation pipelines. Im
 ---
 ## Contact & Links
 * **Email:** edelvallemacuare@gmail.com
-* **GitHub:** [github.com/tu-usuario](https://github.com/tu-usuario)
-* **LinkedIn:** [linkedin.com/in/tu-perfil](https://linkedin.com/in/tu-perfil)
+* **GitHub:** [https://3dvm.github.io/tech-art-portfolio/](https://3dvm.github.io/tech-art-portfolio/)
+* **LinkedIn:** [https://www.linkedin.com/in/ernesto-del-valle-macuare/](https://www.linkedin.com/in/ernesto-del-valle-macuare/)
