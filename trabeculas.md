@@ -2,6 +2,7 @@
 **Portfolio & Case Studies** ---
 
 ## Case Study 1: Procedural Trabecular Generator (MedTech Pipeline)
+[← Back to Home](./)
 
 [![Watch the Demo](URL_DE_TU_THUMBNAIL_AQUI)](URL_DE_TU_VIDEO_EN_YOUTUBE_O_VIMEO)
 *Click image to watch the 60-second technical breakdown.*
@@ -26,3 +27,4 @@ Implemented a spatial collapse algorithm to replicate the native Voronoi cellula
 *(Brief caption explaining the core math node or boolean logic used here).*
 
 ---
+[← Back to Main Portfolio](./)
