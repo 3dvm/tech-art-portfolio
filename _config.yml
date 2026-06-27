@@ -1,0 +1,5 @@
+theme: jekyll-theme-midnight
+
+title: Ernesto Del Valle
+tagline: Technical Artist & Pipeline TD
+description: Technical Art portfolio bridging code architecture with artist-friendly environments. Includes Python pipeline automation, headless rendering scripts, and procedural Geometry Nodes setups. Built to eliminate bottlenecks and scale 3D workflows in Blender.
