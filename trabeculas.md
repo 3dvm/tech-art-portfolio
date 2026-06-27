@@ -10,7 +10,6 @@
     Tu navegador no soporta la reproducción de video nativo.
   </video>
 </div>
-*Click the image to watch the 60-second technical breakdown.*
 
 ---
 
