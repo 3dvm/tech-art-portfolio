@@ -11,6 +11,8 @@ Welcome to my technical art and pipeline engineering portfolio. I specialize in 
 
 ## Production Case Studies
 
+---
+
 ### [Case Study 1: Procedural Trabecular Generator](./trabeculas.md)
 ![Trabecuar Bone render](./imgs/trabecula_thumb.png)
 **Focus:** *Procedural Content Generation & Spatial Math (Geometry Nodes)*
@@ -18,11 +20,15 @@ An advanced biological asset generator built to replicate human bone microarchit
 
 [Read the full breakdown and see the node architecture](./trabeculas.md)
 
+---
+
 ### [Case Study 2: "The Time Capsule" Add-on Patcher & Launcher](./launcher.md)
 **Focus:** *Pipeline Infrastructure & Environment Isolation (Blender Python API)*
 A custom production environment wrapper designed to isolate project dependencies and automate pipeline deployment. Features a dynamic Python utility that intercepts official Blender Studio tools to kill network authentication bottlenecks and enforce 100% backward compatibility across legacy asset libraries.
 
 [Read the technical breakdown and view the source code](./launcher.md)
+
+---
 
 ### [Case Study 3: Headless Render Automation Framework](./render-headless.md)
 **Focus:** *Render Pipeline Engineering & Core Automation Scripts*
