@@ -22,9 +22,9 @@ An advanced biological asset generator built to replicate human bone microarchit
 
 ---
 
-### [Case Study 2: "The Time Capsule" Add-on Patcher & Launcher](./launcher.md)
-**Focus:** *Pipeline Infrastructure & Environment Isolation (Blender Python API)*
-A custom production environment wrapper designed to isolate project dependencies and automate pipeline deployment. Features a dynamic Python utility that intercepts official Blender Studio tools to kill network authentication bottlenecks and enforce 100% backward compatibility across legacy asset libraries.
+### [Case Study 2: "The Time Capsule" Environment Manager & Launcher](./launcher.md)
+**Focus:** *Pipeline Infrastructure & Environment Isolation (Python / rez-like framework)*
+A lightweight studio hub built in Python (CustomTkinter) to eliminate "dependency hell" and global installation conflicts. The manager dynamically parses project-specific JSON configurations to inject isolated network paths, SVN repos, and specific Blender builds, creating an invisible sandbox for artists. Reduces onboarding to a single click and guarantees 100% backward compatibility for legacy productions.
 
 [Read the technical breakdown and view the source code](./launcher.md)
 
