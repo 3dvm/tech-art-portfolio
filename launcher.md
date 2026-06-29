@@ -1,6 +1,6 @@
 # Case Study: "The Time Capsule" Environment Manager & Launcher
 
-[← Back to Home](./index.html) | [🔗 View Full Repository on GitHub](https://github.com/3dvm/macuare-hub)
+[← Back to Home](./index.md) | [🔗 View Full Repository on GitHub](https://github.com/3dvm/macuare-hub)
 
 <div align="center">
   <video width="800" controls autoplay loop muted playsinline preload="metadata" style="border-radius: 8px;">
@@ -129,7 +129,7 @@ To prevent saving passwords on disk, the UI components intercept the launch acti
 
 ---
 
-[← Back to Main Portfolio](https://www.google.com/search?q=./index.html)
+[← Back to Main Portfolio](./index.md)
 
 **Ernesto Del Valle Macuare** | Pipeline TD & Tools Developer
 
