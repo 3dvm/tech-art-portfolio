@@ -1,79 +1,136 @@
 # Case Study: "The Time Capsule" Environment Manager & Launcher
 
-[← Back to Home](./index.md)
+[← Back to Home](./index.html) | [🔗 View Full Repository on GitHub](https://github.com/3dvm/macuare-hub)
 
 <div align="center">
   <video width="800" controls autoplay loop muted playsinline preload="metadata" style="border-radius: 8px;">
     <source src="https://estudiomacuare.com/uploads/tu_video_launcher.mp4" type="video/mp4">
-    Tu navegador no soporta la reproducción de video nativo.
+    Your browser does not support native video playback.
   </video>
+  <p><em>Macuare Hub in action: Single Sign-On (SSO), dynamic environment building, and isolated DCC launching.</em></p>
 </div>
 <br>
 
 ---
 
-### 1. The Problem: "Dependency Hell" and Broken Pipelines
+### 1. The Problem: "Dependency Hell" and Security Risks
 Updating software mid-production is a massive risk for any studio. Global installations and cross-dependencies often mean that upgrading a tool for a new project completely breaks legacy projects. Artists waste hours dealing with Python `AttributeError` crashes, missing add-ons, and manual path configurations just to open an older file.
 
-The challenge was to eliminate this friction entirely, ensuring that every project retains its original "DNA" and can be opened years later without breaking the current studio ecosystem.
+Furthermore, traditional pipelines often rely on saving plain-text SVN or network credentials on local disks, creating significant security vulnerabilities in shared studio environments.
+
+The challenge was twofold: **eliminate environment friction entirely** (ensuring every project retains its original "DNA" to be opened years later) and **secure network credentials** without compromising the artist's user experience.
 
 ### 2. The Solution: A Lightweight "rez-like" Studio Hub
-To solve this, I developed the **Macuare Hub**, a custom environment manager written in Python. Functioning as a lightweight alternative to frameworks like *rez*, this launcher creates an invisible sandbox for artists. 
+To solve this, I developed the **Macuare Hub**, a custom environment manager and standalone executable written in Python. Functioning as a lightweight, OS-agnostic alternative to frameworks like *rez*, this launcher creates an absolute, invisible sandbox for artists. 
 
-It scans our hybrid network (Nextcloud + SVN) and parses a unique configuration file (`project_config.json`) for each project. Based on this data, the Hub dynamically injects the exact network topology, loads the specific Blender executable (e.g., v5.0.1 vs v5.1.2), and isolates the required custom add-ons without relying on global system installations. 
+It acts as a bridge between our production tracker (Kitsu), our version control (SVN), and our hybrid storage (Nextcloud). Based on the project's JSON manifest, the Hub dynamically extracts specific DCC binaries, isolates required add-ons locally, and injects runtime variables—all without touching the OS global registry.
 
-Artists can even run multiple projects simultaneously with entirely different, conflicting environments, and neither will crash.
+<div align="center">
+  <img src="assets/img/macuare_hub_artist_dashboard.png" alt="Macuare Hub - Artist Dashboard" width="700" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+  <br><em>Artist Dashboard built with CustomTkinter. Projects are populated dynamically based on Kitsu assignments.</em>
+</div>
 
 ---
 
-### 3. Tools & Infrastructure
+### 3. Key Pipeline Features
+
+* **Absolute Runtime Isolation (Sandbox):** By dynamically overriding variables like `BLENDER_USER_RESOURCES`, the Hub forces the DCC to read and write preferences, extensions, and scripts strictly within a local project folder (`06_conf_LOCAL`). Artists can run Blender 3.6 and Blender 4.2 simultaneously without cross-contamination.
+* **In-Memory Credential Vault (JIT Security):** The Hub implements a Just-In-Time interception pattern. SVN passwords are asked once via a modal and kept strictly in volatile RAM. They are injected into the DCC as environment variables and wiped entirely upon logout.
+* **Role-Based Access Control (Kitsu SSO):** Integrated with the Gazu API, the Hub detects the user's role. Technical Directors (TDs) get a specialized dashboard to deploy new pipelines and sync manifests, while Artists get a streamlined, read-only launcher.
+* **Custom App Templates & Splash Screens:** Automatically deploys studio-specific UI templates and project-specific Splash Screens to ensure artists instantly know they are in the correct context.
+
+<div align="center">
+  <img src="assets/img/macuare_hub_td_wizard.png" alt="Macuare Hub - TD Project Builder Wizard" width="500" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+  <br><em>Technical Director view: Initializing a new project with specific DCC versions, mandatory extensions, and a custom Splash Screen.</em>
+</div>
+
+---
+
+### 4. Tools & Infrastructure Architecture
 
 | Category | Technology Used |
 | :--- | :--- |
-| **Language** | Python (`os`, `json`, `subprocess`) |
-| **GUI Framework** | CustomTkinter (Modern, artist-friendly interface) |
+| **Language / UI** | Python 3.12, CustomTkinter (Artist-proof UI) |
+| **Production Tracking** | Kitsu (Gazu API for SSO and Role Validation) |
 | **Network / VCS** | SVN (Apache Subversion), Nextcloud, Git LFS |
-| **Core Architecture** | Environment Isolation, JSON Data Parsing, Dynamic Path Injection |
-
-### 4. Impact & Pipeline Metrics
-* **Deployment Time:** Reduced artist onboarding and environment setup from hours of manual configuration to **1 click**.
-* **Zero Global Installations:** Add-ons and extensions (like Kitsu and custom Asset Pipelines) are loaded dynamically per session, keeping the artist's local machine completely clean.
-* **100% Backward Compatibility:** Legacy projects are frozen in time. An asset built in a 2024 pipeline opens flawlessly in 2026 without breaking modern tools.
+| **Core Architecture** | MVC Pattern, In-Memory Vault, Ephemeral Sandboxing |
+| **Distribution** | PyInstaller (Standalone frozen executable, no Python required for artists) |
 
 ---
 
-### 5. Code Architecture Snapshot
+### 5. Code Architecture Snapshots
 
-*(A snippet of the Python logic used to parse the project DNA and inject the sandboxed environment before launching the DCC).*
+#### Snapshot 1: Enforcing Absolute Isolation (Sandbox)
+Instead of extracting add-ons globally, the Hub builds an ephemeral environment. It hijacks the DCC's resource paths before launching the subprocess, guaranteeing zero global footprint.
 
 ```python
-# Snapshot: Parsing Project DNA and Injecting Isolated Paths
 import os
-import json
 import subprocess
+from pathlib import Path
 
-def launch_sandboxed_environment(project_path):
-    config_file = os.path.join(project_path, "project_config.json")
-    
-    with open(config_file, 'r') as file:
-        dna = json.load(file)
-        
-    # Inject isolated paths for scripts and add-ons (Zero Global Installation)
+def lanzar_blender(project_root: Path, config_path: Path, svn_user: str, svn_pwd: str, kitsu_user: str, kitsu_pwd: str):
+    # ... (Manifest parsing and binary validation omitted) ...
+
     env = os.environ.copy()
-    env["BLENDER_USER_SCRIPTS"] = dna["isolated_scripts_path"]
-    env["MACUARE_ASSET_LIBRARY"] = dna["svn_repo_path"]
+    env["MACUARE_PROJECT_CONFIG"] = str(config_path)
     
-    executable = dna["blender_executable_path"]
+    # === ABSOLUTE ISOLATION (SANDBOX) ===
+    # Force the DCC to use a local, project-specific folder for all configs and extensions
+    sandbox_dir = project_root / "06_conf_LOCAL" / "blender_data"
+    sandbox_dir.mkdir(parents=True, exist_ok=True)
+    env["BLENDER_USER_RESOURCES"] = str(sandbox_dir)
     
-    print(f"[SUCCESS] Injecting environment for {dna['project_name']} - Blender {dna['version']}")
-    subprocess.Popen([executable], env=env)
+    # Inject RAM-secured credentials
+    env["MACUARE_SVN_USER"] = svn_user
+    env["MACUARE_SVN_PASSWORD"] = svn_pwd
+    env["KITSU_USER"] = kitsu_user
+    env["KITSU_PWD"] = kitsu_pwd
+
+    # Launch subprocess with the custom App Template
+    cmd = [str(blender_bin), "--app-template", template_name]
+    subprocess.Popen(cmd, env=env)
+
+```
+
+#### Snapshot 2: Just-In-Time (JIT) Credential Interception
+
+To prevent saving passwords on disk, the UI components intercept the launch action. If the RAM Vault is empty, execution pauses, prompts the user, stores the keys in volatile memory, and resumes automatically via callbacks.
+
+```python
+    def iniciar_proyecto_hilo(self, project_root: Path, config_path: Path):
+        # === JIT INTERCEPTOR FOR SECURE LAUNCH ===
+        if not self.vault.has_svn_credentials():
+            SVNLoginWindow(
+                parent=self.winfo_toplevel(),
+                vault_manager=self.vault,
+                on_success_callback=lambda: self.iniciar_proyecto_hilo(project_root, config_path)
+            )
+            return
+
+        # Extract full credentials strictly from RAM
+        svn_user, svn_pwd = self.vault.get_svn_credentials()
+        kitsu_user, kitsu_pwd = self.vault.get_kitsu_credentials()
+
+        threading.Thread(
+            target=lanzar_blender, 
+            args=(project_root, config_path, svn_user, svn_pwd, kitsu_user, kitsu_pwd), 
+            daemon=True
+        ).start()
 
 ```
 
 ---
 
+### 6. Impact & Pipeline Metrics
+
+* **Deployment Time:** Reduced artist onboarding and environment setup from hours of manual configuration to **1 click**.
+* **Bulletproof Security:** Zero plain-text credentials on local disks. Passwords live strictly in RAM during the active session.
+* **100% Backward Compatibility:** Legacy projects are effectively "time capsules". An asset built in a 2024 pipeline opens flawlessly in 2026 with its own frozen tools, without breaking the modern studio ecosystem.
+
+---
+
 [← Back to Main Portfolio](https://www.google.com/search?q=./index.html)
 
-**Ernesto Del Valle Macuare** | Pipeline TD & Technical Artist
+**Ernesto Del Valle Macuare** | Pipeline TD & Tools Developer
 
-📧 edelvallemacuare@gmail.com
+[🔗 LinkedIn](https://www.google.com/search?q=https://www.linkedin.com/in/tu-perfil) | [🔗 GitHub](https://www.google.com/search?q=https://github.com/3dvm) | 📧 edelvallemacuare@gmail.com
