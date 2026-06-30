@@ -133,6 +133,34 @@ def lanzar_blender(project_root: Path, config_path: Path, svn_user: str, svn_pwd
 
 ```
 
+<div class="mermaid">
+sequenceDiagram
+    autonumber
+    actor Artist
+    participant UI as Macuare Hub GUI
+    participant Vault as RAM Vault (Volatile)
+    participant Core as Env Launcher
+    participant DCC as Blender
+
+    Artist->>UI: Clicks "Launch Project"
+    UI->>Vault: Check SVN/Kitsu Credentials
+    
+    alt Vault is Empty
+        Vault-->>UI: Missing Credentials
+        UI->>Artist: Prompt JIT Login Modal
+        Artist->>UI: Enters Passwords
+        UI->>Vault: Store in RAM (No Disk IO)
+    end
+    
+    UI->>Core: Trigger Thread (project_config.json)
+    Core->>Vault: Retrieve Credentials
+    Core->>Core: Inject Kitsu/SVN ENV variables
+    Core->>Core: Override BLENDER_USER_RESOURCES
+    Core->>DCC: subprocess.Popen()
+    
+    Note over DCC: DCC boots 100% isolated.<br/>Init script reads ENVs<br/>and auto-authenticates.
+</div>
+    
 #### Snapshot 2: Just-In-Time (JIT) Credential Interception
 
 To prevent saving passwords on disk, the UI components intercept the launch action. If the RAM Vault is empty, execution pauses, prompts the user, stores the keys in volatile memory, and resumes automatically via callbacks.
