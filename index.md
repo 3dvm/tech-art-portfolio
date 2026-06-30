@@ -32,7 +32,14 @@ Welcome to my technical art and pipeline portfolio. I specialize in bridging the
 ---
 
 ### [Case Study 3: Art-Driven Render Pipeline (Historias Nativas)](./render-headless.md)
-![Painting with Polygons Effect](./imgs/painting_with_polygons_effect.gif)  
+<div align="center">
+  <video width="600" controls autoplay loop muted playsinline preload="metadata" style="border-radius: 8px;">
+    <source src="https://estudiomacuare.com/wp-content/uploads/atancha_360_export.mp4" type="video/mp4">
+    Your browser does not support native video playback.
+  </video>
+  <p><em>The "Painting with Polygons" effect: A complex, art-driven result requiring strict Render Layer separation and dynamic scene mutation at render time.</em></p>
+</div>
+
 **Focus:** *Render Pipeline Engineering, Headless Scene Mutation & Bash Orchestration* A robust render manager designed to support complex "Painting with Polygons" art direction. Implemented a hybrid Python/Bash pipeline to audit missing frames via logs, mutate scene data headlessly (toggling EEVEE/Cycles sub-frame settings and Z-Masks), and intelligently orchestrate batch rendering across local machines.
 
 [➡️ Read the pipeline breakdown and audit the logic diagrams](./render-headless.md)
