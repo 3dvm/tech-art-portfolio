@@ -23,6 +23,7 @@ An advanced biological asset generator built to replicate human bone microarchit
 ---
 
 ### [Case Study 2: "The Time Capsule" Environment Manager & Launcher](./launcher.md)
+![Macuare Hub interface](./imgs/macuare_hub_artist_dashboard.png)
 **Focus:** *Pipeline Infrastructure & Environment Isolation (Python / rez-like framework)*
 A lightweight studio hub built in Python (CustomTkinter) to eliminate "dependency hell" and global installation conflicts. The manager dynamically parses project-specific JSON configurations to inject isolated network paths, SVN repos, and specific Blender builds, creating an invisible sandbox for artists. Reduces onboarding to a single click and guarantees 100% backward compatibility for legacy productions.
 
