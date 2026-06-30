@@ -30,7 +30,7 @@ It acts as a bridge between our production tracker (Kitsu), our version control 
   <br><em>Artist Dashboard built with CustomTkinter. Projects are populated dynamically based on Kitsu assignments.</em>
 </div>
 
-<div class="mermaid">
+```mermaid
 flowchart TD
     subgraph Cloud [Studio Cloud Infrastructure]
         K[🦊 Kitsu API<br>SSO & Assignments]
@@ -69,7 +69,7 @@ flowchart TD
     class SB,DCC local;
     class MH hub;
     class RAM security;
-</div>
+```
 
 ---
 
