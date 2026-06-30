@@ -30,7 +30,7 @@ It acts as a bridge between our production tracker (Kitsu), our version control 
   <br><em>Artist Dashboard built with CustomTkinter. Projects are populated dynamically based on Kitsu assignments.</em>
 </div>
 
-```mermaid
+<div class="mermaid">
 flowchart TD
     subgraph Cloud [Studio Cloud Infrastructure]
         K[🦊 Kitsu API<br>SSO & Assignments]
@@ -69,7 +69,7 @@ flowchart TD
     class SB,DCC local;
     class MH hub;
     class RAM security;
-```
+</div>
 
 ---
 
@@ -173,5 +173,13 @@ To prevent saving passwords on disk, the UI components intercept the launch acti
 [← Back to Main Portfolio](./index.md)
 
 **Ernesto Del Valle Macuare** | Pipeline TD & Tools Developer
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ 
+    startOnLoad: true,
+    theme: 'dark' // Puedes cambiarlo a 'default' si tu portafolio es de fondo blanco
+  });
+</script>
 
 [🔗 LinkedIn](https://www.google.com/search?q=https://www.linkedin.com/in/tu-perfil) | [🔗 GitHub](https://www.google.com/search?q=https://github.com/3dvm) | 📧 edelvallemacuare@gmail.com
