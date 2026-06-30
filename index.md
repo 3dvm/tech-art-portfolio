@@ -1,6 +1,6 @@
 # Ernesto Del Valle M. | Technical Artist & Pipeline TD
 
-[📄 Download Resume/CV](./assets/Ernesto_Del_Valle_CV.pdf)
+[📄 Download Resume/CV](./assets/CV_Ernesto_Del_Valle_PipelineTD.pdf)
 
 Welcome to my technical art and pipeline portfolio. I specialize in bridging the gap between robust code architecture and artist-friendly environments to eliminate production bottlenecks, secure studio data, and optimize rendering pipelines.
 
