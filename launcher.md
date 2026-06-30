@@ -26,7 +26,7 @@ To solve this, I developed the **Macuare Hub**, a custom environment manager and
 It acts as a bridge between our production tracker (Kitsu), our version control (SVN), and our hybrid storage (Nextcloud). Based on the project's JSON manifest, the Hub dynamically extracts specific DCC binaries, isolates required add-ons locally, and injects runtime variables—all without touching the OS global registry.
 
 <div align="center">
-  <img src="assets/img/macuare_hub_artist_dashboard.png" alt="Macuare Hub - Artist Dashboard" width="700" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+  <img src="imgs/macuare_hub_artist_dashboard.png" alt="Macuare Hub - Artist Dashboard" width="700" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
   <br><em>Artist Dashboard built with CustomTkinter. Projects are populated dynamically based on Kitsu assignments.</em>
 </div>
 
