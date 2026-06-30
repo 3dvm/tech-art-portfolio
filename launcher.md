@@ -3,9 +3,9 @@
 [← Back to Home](./index.md) | [🔗 View Full Repository on GitHub](https://github.com/3dvm/macuare-hub)
 
 <div align="center">
-  <video width="800" controls autoplay loop muted playsinline preload="metadata" style="border-radius: 8px;">
-    <source src="https://estudiomacuare.com/uploads/tu_video_launcher.mp4" type="video/mp4">
-    Your browser does not support native video playback.
+  <video width="600" controls autoplay loop muted playsinline preload="metadata" style="border-radius: 8px;">
+    <source src="https://estudiomacuare.com/wp-content/uploads/macuare-hub-demo.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de video nativo.
   </video>
   <p><em>Macuare Hub in action: Single Sign-On (SSO), dynamic environment building, and isolated DCC launching.</em></p>
 </div>
