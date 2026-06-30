@@ -5,7 +5,7 @@
 <div align="center">
   <video width="600" controls autoplay loop muted playsinline preload="metadata" style="border-radius: 8px;">
     <source src="https://estudiomacuare.com/wp-content/uploads/macuare-hub-demo.mp4" type="video/mp4">
-    Tu navegador no soporta la reproducción de video nativo.
+    Your browser does not support native video playback.
   </video>
   <p><em>Macuare Hub in action: Single Sign-On (SSO), dynamic environment building, and isolated DCC launching.</em></p>
 </div>
@@ -206,8 +206,12 @@ To prevent saving passwords on disk, the UI components intercept the launch acti
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ 
     startOnLoad: true,
-    theme: 'dark' // Puedes cambiarlo a 'default' si tu portafolio es de fondo blanco
+    theme: 'dark'
   });
 </script>
 
-[🔗 LinkedIn](https://www.google.com/search?q=https://www.linkedin.com/in/tu-perfil) | [🔗 GitHub](https://www.google.com/search?q=https://github.com/3dvm) | 📧 edelvallemacuare@gmail.com
+[🔗 LinkedIn](https://www.linkedin.com/in/ernesto-del-valle-macuare/) | [🔗 GitHub](https://github.com/3dvm) | 📧 edelvallemacuare@gmail.com
+
+
+
+
