@@ -81,7 +81,7 @@ flowchart TD
 * **Custom App Templates & Splash Screens:** Automatically deploys studio-specific UI templates and project-specific Splash Screens to ensure artists instantly know they are in the correct context.
 
 <div align="center">
-  <img src="assets/img/macuare_hub_td_wizard.png" alt="Macuare Hub - TD Project Builder Wizard" width="500" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+  <img src="imgs/macuare_hub_TD_wizard.png" alt="Macuare Hub - TD Project Builder Wizard" width="500" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
   <br><em>Technical Director view: Initializing a new project with specific DCC versions, mandatory extensions, and a custom Splash Screen.</em>
 </div>
 
