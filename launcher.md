@@ -30,6 +30,47 @@ It acts as a bridge between our production tracker (Kitsu), our version control 
   <br><em>Artist Dashboard built with CustomTkinter. Projects are populated dynamically based on Kitsu assignments.</em>
 </div>
 
+<div class="mermaid">
+flowchart TD
+    subgraph Cloud [Studio Cloud Infrastructure]
+        K[🦊 Kitsu API<br>SSO & Assignments]
+        N[☁️ Nextcloud<br>Software Vault & Manifests]
+        S[🐘 SVN Server<br>Production Assets & Shots]
+    end
+
+    subgraph Workstation [Artist Local Machine]
+        direction TB
+        MH{⚙️ Macuare Hub<br>Standalone Executable}
+        RAM[(🧠 In-Memory Vault<br>Volatile Credentials)]
+        SB[📦 Ephemeral Sandbox<br>./06_conf_LOCAL/]
+        DCC[🎨 Blender Subprocess]
+    end
+
+    %% Data Flow
+    K <-->|Role Auth / JSON| MH
+    N -->|Downloads Add-ons .zip| MH
+    MH -->|Writes Extensions & Configs| SB
+    MH -->|Stores Passwords temporarily| RAM
+    
+    %% Injection
+    RAM -.->|Injects ENV variables| DCC
+    SB -.->|BLENDER_USER_RESOURCES override| DCC
+    
+    %% DCC connection
+    DCC <-->|Commits/Updates Data| S
+
+    %% Styling
+    classDef cloud fill:#2c3e50,stroke:#fff,stroke-width:2px,color:#fff;
+    classDef local fill:#34495e,stroke:#fff,stroke-width:2px,color:#fff;
+    classDef hub fill:#e67e22,stroke:#fff,stroke-width:3px,color:#fff;
+    classDef security fill:#e74c3c,stroke:#fff,stroke-width:2px,color:#fff;
+
+    class K,N,S cloud;
+    class SB,DCC local;
+    class MH hub;
+    class RAM security;
+</div>
+
 ---
 
 ### 3. Key Pipeline Features
