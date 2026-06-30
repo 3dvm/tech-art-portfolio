@@ -116,7 +116,13 @@ if bpy.context.scene.use_nodes:
 
 [🔗 LinkedIn](https://www.linkedin.com/in/ernesto-del-valle-macuare/) | [🔗 GitHub](https://github.com/3dvm) | 📧 edelvallemacuare@gmail.com
 
-
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ 
+    startOnLoad: true,
+    theme: 'dark'
+  });
+</script>
 
 
 
